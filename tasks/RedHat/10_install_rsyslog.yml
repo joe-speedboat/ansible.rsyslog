@@ -1,0 +1,21 @@
+---
+- name: install rsyslog
+  yum:
+    name: rsyslog
+    state: latest
+
+- name: copy file
+  template: 
+    src: rsyslog_ansible.conf.j2
+    dest: /etc/rsyslog.d/rsyslog_ansible.conf
+    owner: root
+    group: root
+    mode: '0644'
+  register: config
+
+- name: enable and restart service
+  service:
+    name: rsyslog
+    enabled: yes
+    state: restarted
+  when: config.changed

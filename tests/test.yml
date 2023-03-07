@@ -1,0 +1,7 @@
+---
+- name: Ansible Rsyslog Client Role Test
+  hosts: all,!localhost
+  become: True
+  roles:
+    - joe-speedboat.rsyslog
+...

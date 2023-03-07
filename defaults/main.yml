@@ -1,0 +1,2 @@
+rsyslog_server: graylog.domain.tld
+rsyslog_port: 1516
