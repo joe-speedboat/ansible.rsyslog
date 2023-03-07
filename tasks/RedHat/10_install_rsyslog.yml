@@ -6,8 +6,8 @@
 
 - name: copy file
   template: 
-    src: rsyslog_ansible.conf.j2
-    dest: /etc/rsyslog.d/rsyslog_ansible.conf
+    src: rsyslog.conf.j2
+    dest: "/etc/rsyslog.d/{{ rsyslog_cfg_name }}.conf"
     owner: root
     group: root
     mode: '0644'
